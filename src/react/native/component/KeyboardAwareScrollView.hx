@@ -1,10 +1,15 @@
 package react.native.component;
 
+import react.native.component.ScrollView;
 import react.native.component.props.ScrollViewProps;
 import react.ReactComponent.ReactComponentOfProps;
 
 @:jsRequire('react-native-keyboard-aware-scroll-view', 'KeyboardAwareScrollView')
-extern class KeyboardAwareScrollView extends ReactComponentOfProps<KeyboardAwareScrollViewProps> {}
+extern class KeyboardAwareScrollView extends ReactComponentOfProps<KeyboardAwareScrollViewProps> {
+	function scrollTo(options:{?x:Float, ?y:Float, ?animated:Bool}):Void;
+	function scrollToEnd(options:{?animated:Bool}):Void;
+	function getScrollResponder():ScrollResponder;
+}
 
 typedef KeyboardAwareScrollViewProps = {
 	> ScrollViewProps, 
